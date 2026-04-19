@@ -36,7 +36,7 @@ def rank_and_basis(A=None):
         col = [A[i][j] for i in range(m)]
         col_basis.append(col)
 
-    # Giari tìm không gian nghiệm, thế ngược
+    # Giải tìm không gian nghiệm, thế ngược
     null_basis = []
     free_cols = [j for j in range(n) if j not in pivot_cols]
     

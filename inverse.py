@@ -2,21 +2,21 @@ import matrix as mt
 import gaussian_eliminate as ge
 
 def inverse(A): 
-    """ Tìm ma trận nghịch đảo bằng phương pháp Gauss-Jordan trên ma trận mở rộng [A | I] """
+    """ Tìm ma trận nghịch đảo bằng phương pháp Gauss-Jordan trên ma trận mở rộng [A | I]  """
     n = len(A)
     if n == 0:
         raise ValueError("Ma trận không được để trống")
     if n != len(A[0]):
-        raise ValueError("ma trận phải là ma trận vuông")
+        raise ValueError("Ma trận phải là ma trận vuông")
     
-    # tạo ma trận mở rộng [A|I]
+    # Tạo ma trận mở rộng [A|I]
     aug = [row[:] + [1.0 if i == j else 0.0 for j in range(n)] for i, row in enumerate(A)]
 
     ref_matrix, _, _ = ge.gaussian_eliminate(aug)
 
     # Duyệt từ dòng cuối lên dòng đầu
     for i in range(n - 1, -1, -1):
-        # Phần tử chốt 
+        # Phan tu chot 
         pivot = ref_matrix[i][i]
         
         # Kiểm tra tính khả nghịch bằng mt.Matrix.Zero 

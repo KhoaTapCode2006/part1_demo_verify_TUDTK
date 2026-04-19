@@ -66,7 +66,7 @@ def back_substitution(U, c):
         for i in range(len(free_vars)):
             # Tạo vector trị tự do: biến thứ i là 1.0, còn lại là 0.0
             free_values = [0.0] * len(free_vars)
-        free_values[i] = 1.0
+            free_values[i] = 1.0
         # Giải Ux = 0 
         zero_vec = [0.0] * n_rows
         vec_basis = solve_system(zero_vec, free_values)
